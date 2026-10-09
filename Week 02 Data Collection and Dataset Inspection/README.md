@@ -1,78 +1,89 @@
-# Week 2 --- Dataset Inspection and Data Quality Assessment
+# Week 02 — Dataset Inspection & Data Quality Assessment
 
-**Project:** Exploring Customer Feedback and Product Sentiment\
-**Intern:** Sumit Kumar\
-**Internship:** Data Science with Python Analyst Internship\
-**Domain:** Beauty and Wellness\
-**Submission date:** 02 October 2026
+### Data Science with Python Internship | Beauty & Wellness
 
-## Objective
+## Overview
 
-Inspect the selected Amazon Beauty reviews CSV dataset, review its
-structure and data types, identify missing values, and run initial
-data-quality checks before preprocessing and exploratory analysis.
+Week 2 focused on inspecting the selected Amazon Beauty customer-review dataset and assessing its initial data quality for the project **“Exploring Customer Feedback and Product Sentiment.”**
 
-## Dataset
+The objective was to understand the dataset structure, examine its columns and data types, identify missing values, and perform preliminary data-quality checks before data cleaning and exploratory data analysis.
 
--   **File:** `data/raw/amazon_beauty_reviews_dataset.csv`
--   **Reported size:** 70,528 rows × 10 columns
--   **Fields:** `rating`, `title`, `text`, `images`, `asin`,
-    `parent_asin`, `user_id`, `timestamp`, `helpful_vote`,
-    `verified_purchase`
+## Objectives
 
-The dataset's original source, license, and collection documentation
-have not yet been verified. Add these details once confirmed.
+- Load and inspect the customer-review dataset using Python and Pandas.
+- Understand the dataset dimensions, column names, and data types.
+- Identify missing values and calculate their percentages.
+- Examine customer rating values and validate the expected 1–5 range.
+- Check timestamp parsing.
+- Perform preliminary duplicate detection.
+- Document findings, limitations, and recommended next steps.
+
+## Dataset Overview
+
+- **Dataset:** `amazon_beauty_reviews_dataset.csv`
+- **Location:** `data/raw/amazon_beauty_reviews_dataset.csv`
+- **Reported dimensions:** 70,528 rows × 10 columns
+
+The inspected fields include:
+
+`rating`, `title`, `text`, `images`, `asin`, `parent_asin`, `user_id`, `timestamp`, `helpful_vote`, and `verified_purchase`.
 
 ## Work Completed
 
-1.  Confirmed the CSV file path and read a five-row sample.
-2.  Printed column names, data types, and sample shape.
-3.  Counted missing values and calculated missing-value percentages.
-4.  Processed the file in chunks of 5,000 rows to check row count,
-    within-chunk duplicate rows, rating distribution, ratings outside
-    1--5, and timestamps that could not be parsed.
-5.  Compared the sum of rating counts with the total row count.
+1. Loaded the dataset using Python and Pandas.
+2. Read a sample of records to inspect the data.
+3. Reviewed column names, data types, and dataset dimensions.
+4. Calculated missing-value counts and percentages.
+5. Processed the dataset in chunks for selected data-quality checks.
+6. Checked rating values against the expected 1–5 range.
+7. Examined timestamp parsing and performed preliminary duplicate detection.
 
-## Initial Results
+## Initial Findings
 
--   Total rows: **70,528**
--   Total columns: **10**
--   Missing values: `title` **160** (\~0.02%); `text` **212** (\~0.03%);
-    all other listed fields **0**
--   Rating counts: 1 star **10,280**; 2 stars **4,304**; 3 stars
-    **5,607**; 4 stars **7,931**; 5 stars **42,026**
--   Ratings outside 1--5: **0**
--   Unparseable timestamps: **0**
--   Duplicate rows detected within individual chunks: **716**. This is
-    not a global full-file duplicate count.
+- Missing values were identified in the `title` and `text` columns.
+- No ratings outside the expected 1–5 range were reported.
+- No unparseable timestamps were reported by the inspection script.
+- Duplicate detection was performed within individual chunks; the result is not a complete global duplicate count.
 
-## Files
+These findings describe the initial inspection and do not imply that missing values or duplicates have already been removed.
 
--   `week2_data_inspection.py` --- dataset inspection and data-quality
-    checks
--   `screenshots/dataset_overview.png` --- dataset sample, columns, and
-    data types
--   `screenshots/missing_values.png` --- missing-value output
--   `screenshots/data_quality_checks.png` --- data-quality validation
-    output
--   `Week2_Dataset_Inspection_Report_Sumit_Kumar_Same_Format.docx` ---
-    detailed Week 2 report
+## Tools & Technologies
 
-## Run
+- Python
+- Pandas
+- Visual Studio Code
+- CSV data processing
 
-From the project root in VS Code terminal:
+## Project Files
 
-``` bash
-python Week-2/week2_data_inspection.py
+- `week2_data_inspection.py` — dataset inspection and data-quality checks.
+- `screenshots/dataset_overview.png` — dataset sample, columns, and data types.
+- `screenshots/missing_values.png` — missing-value inspection output.
+- `screenshots/data_quality_checks.png` — data-quality validation output.
+- `Week2_Dataset_Inspection_Report.docx` — detailed Week 2 report.
+
+## How to Run
+
+From the project root directory, execute:
+
+```bash
+python Week-02_Data-Collection-and-Dataset-Inspection/week2_data_inspection.py
 ```
 
-Ensure the CSV exists at `data/raw/amazon_beauty_reviews_dataset.csv`
-and that pandas is installed in the selected Python environment.
+Ensure that the dataset exists at the configured path and Pandas is installed in the selected Python environment.
 
-## Limitations and Next Steps
+## Limitations & Next Steps
 
-This work is an initial inspection only. Missing values have not been
-imputed or removed, and duplicate handling has not been finalized. Next,
-verify dataset provenance and usage terms, perform a global duplicate
-assessment, inspect review-text quality, and prepare a documented
-cleaned dataset for exploratory analysis.
+- Verify the dataset's original source, documentation, and usage terms.
+- Perform a global duplicate assessment.
+- Establish rules for handling missing titles and review text.
+- Inspect review-text quality.
+- Prepare a documented cleaned dataset for exploratory data analysis.
+
+## Outcome
+
+Week 2 established an initial understanding of the dataset's structure and data-quality characteristics. The findings provide a foundation for the next stage: **data cleaning and preprocessing**.
+
+---
+
+*Project: Exploring Customer Feedback and Product Sentiment*
